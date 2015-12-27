@@ -1,6 +1,8 @@
 # My Django Blog
 My Django Blog
 
+http://adem.oztas.net
+
 Installation
 ============
 
