@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
 from django.contrib.syndication.views import Feed
+from django.shortcuts import render
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 from .models import Post, Tag
 
