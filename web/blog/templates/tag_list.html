@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tag }} yazıları{% endblock %}
+
+{% block content %}
+
+{% load custom_tags %}
+<div class="row">
+{% for post in posts %}
+<div class="col-xs-12">
+    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+    <div class="text-muted">{{ post.created }}</div>
+    <div>
+    {{ post.content|safe }}
+    </div>
+    <div>
+        {{ post.tags.all|join_link:", "|safe }}
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+{% if is_paginated %}
+<div class="row">
+    <div class="col-xs-12">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li>
+            <span><a href="?page={{ page_obj.previous_page_number }}">Önceki</a></span>
+        </li>
+        {% endif %}
+        <li class="">
+            <span>{{ page_obj.number }}. sayfa</span>
+        </li>
+    {% if page_obj.has_next %}
+        <li>
+            <span><a href="?page={{ page_obj.next_page_number }}">Sonraki</a></span>
+        </li>
+    </ul>
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}

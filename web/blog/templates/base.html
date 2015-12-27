@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>{% block title %}{{ slug }}{% endblock title %}</title>
+<link rel="alternate" type="application/rss+xml" title="Adem Öztaş &raquo; Beslemesi" href="/feeds/"/>
+
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
+<style>
+<!--
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size:1.2em;
+    }
+    a { color: #000 }
+    a:hover { color: #777 }
+-->
+</style>
+</head>
+<div class="container">
+    <div class="header">
+        <h1><a href="/">Adem Öztaş</a></h1>
+    </div>
+    {% block content %} {% endblock %}
+</div>
+
+</html>
