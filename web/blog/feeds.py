@@ -6,7 +6,7 @@ from .models import Post
 class BlogFeed(Feed):
     title = "My posts"
     link = "/"
-    description = "My post feeds"
+    description = "My feeds"
 
     def items(self):
         return Post.objects.published()[:10]
