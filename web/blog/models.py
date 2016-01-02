@@ -44,7 +44,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    category = models.ForeignKey(Category, null=True)
+    category = models.ForeignKey(Category, null=True, blank=True)
     author = models.ForeignKey(AUTH_USER_MODEL, related_name='added_posts')
 
     objects = PostQuerySet.as_manager()
