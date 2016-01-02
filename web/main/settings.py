@@ -128,7 +128,28 @@ USE_TZ = True
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKED = "pillow"
 
+CKEDITOR_CONFIGS = {
+    'default':{
+        "toolbar": (
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source'],
+            ['CodeSnippet'],
+         ),
+        "width":"700",
+        "extraPlugins": "codesnippet",
+        "codeSnippet_theme": "zenburn",
+    },
+}
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
+
+try:
+    from settings_local import *
+except ImportError:
+    print("settings_local.py not found!")
