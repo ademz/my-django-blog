@@ -30,7 +30,7 @@ class TagListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(TagListView, self).get_context_data(**kwargs)
-        context['tag'] = self.tag.text
+        context['tag'] = self.tag.name
         return context
 
     def get_queryset(self):
