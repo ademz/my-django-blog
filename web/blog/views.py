@@ -1,4 +1,3 @@
-
 from django.contrib.syndication.views import Feed
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
@@ -7,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
 from .models import Post, Tag
+
 
 class PostListView(ListView):
     model = Post
